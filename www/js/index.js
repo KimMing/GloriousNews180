@@ -49,16 +49,16 @@ var app = {
 		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"485591517998","ecb":"app.onNotificationGCM"});
 
         console.log('Received Event: ' + id);
-    }
+    },
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
 		alert('Callback Success! Result = '+result)
-	}
+	},
 	
 	errorHandler:function(error) {
 		alert(error);
-	}
+	},
 	
 	onNotificationGCM: function(e) {
         switch( e.event )
