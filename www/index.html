@@ -39,6 +39,9 @@
 		<script src="cordova.js"></script>
 		<script type="text/javascript" src="PushNotification.js"></script>
 		<script type="text/javascript">
+            app.initialize();
+        </script>
+		<script type="text/javascript">
             var pushNotification;
             
             function onDeviceReady() {
@@ -170,8 +173,5 @@
 			document.addEventListener('deviceready', onDeviceReady, true);
 
          </script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>
