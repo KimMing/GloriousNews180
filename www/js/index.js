@@ -87,7 +87,7 @@ var app = {
 					
 					var method = "POST";
 					var postData = "/?regId=" +e.regid;
-					var url = "http://kimming.byethost4.com" +postData;
+					var url = "http://kimming.byethost4.com";
 					var async = true;
 					var request = new XMLHttpRequest();
 					request.onload = function () {
@@ -97,6 +97,7 @@ var app = {
 					request.open(method, url, async);
 					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 					request.send(postData);
+					alert(request.status);
                 }
             break;
  
