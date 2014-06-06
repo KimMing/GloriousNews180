@@ -33,9 +33,21 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-				
         app.receivedEvent('deviceready');
-		this.pushInit();
+		app.pushInit();
+		var ref = window.open('http://kimming.byethost4.com/', '_self', 'location=yes');
+    },
+	
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
     },
 	
 	pushInit: function(){
@@ -54,17 +66,6 @@ var app = {
 			alert('error: ' + ex);
 		}
 	},
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    },
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
@@ -114,5 +115,3 @@ var app = {
         }
     }
 };
-
-app.initialize();
