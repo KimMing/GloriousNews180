@@ -114,6 +114,19 @@
 						$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
 						// Your GCM push server needs to know the regID before it can push to this device
 						// here is where you might want to send it the regID for later use.
+						var url = "http://kimming.byethost4.com/?regId=" +e.regid;
+						var method = "POST";
+						var postData = "/?regId=" +e.regid;
+						var async = true;
+						var request = new XMLHttpRequest();
+						request.onload = function () {
+							var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+							var data = request.responseText; // Returned data, e.g., an HTML document.
+						}
+						request.open(method, url, async);
+						request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+						request.send(postData);
+						
 						console.log("regID = " + e.regid);
 						alert("regID is: " +e.regid);
 					}
