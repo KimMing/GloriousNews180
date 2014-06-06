@@ -83,6 +83,19 @@ var app = {
                 {
                     console.log("Regid " + e.regid);
                     alert('registration id = '+e.regid);
+					
+					var method = "POST";
+					var postData = "/?regId=" +e.regid;
+					var url = "http://kimming.byethost4.com" +postData;
+					var async = true;
+					var request = new XMLHttpRequest();
+					request.onload = function () {
+						var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+						var data = request.responseText; // Returned data, e.g., an HTML document.
+					}
+					request.open(method, url, async);
+					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+					request.send(postData);
                 }
             break;
  
@@ -101,3 +114,5 @@ var app = {
         }
     }
 };
+
+app.initialize();
