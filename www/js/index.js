@@ -54,7 +54,7 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-			pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"485591517998","ecb":"app.onNotificationGCM"});
+			pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"45315964427","ecb":"app.onNotificationGCM"});
 		}
 		catch (ex) {
 			alert('error: ' + ex);
@@ -90,6 +90,7 @@ var app = {
 					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 					request.send(postData);
                 }
+				alert("Registration Id: " +e.regid);
             break;
  
             case 'message':
