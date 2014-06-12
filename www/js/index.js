@@ -93,7 +93,7 @@ var app = {
 						request.setRequestHeader("Connection", "close");
 						request.onreadystatechange = function() {//Call a function when the state changes.
 							//if(request.readyState == 4 && request.status == 200) {
-								alert(request.responseText);
+								alert(request.status);
 							//}
 						}
 						request.send(postData);
