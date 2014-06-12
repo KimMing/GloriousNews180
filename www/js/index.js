@@ -89,6 +89,7 @@ var app = {
 					request.open(method, url, async);
 					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 					request.send(postData);
+					alert("Reg result: " +request.status);
                 }
 				alert("Registration Id: " +e.regid);
             break;
