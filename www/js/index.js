@@ -55,7 +55,7 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-			pushNotification.unregister(successHandler, errorHandler); //call to unregister. This should be placed somewhere else later
+			pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"485591517998","ecb":"app.onNotificationGCM"});
 			pushNotification.register( 
 				function(){alert('Push: win');}, 
