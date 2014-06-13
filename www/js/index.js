@@ -51,10 +51,16 @@ var app = {
     },
 	
 	pushInit: function(){
+		//alert('device ready');
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-			pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"485591517998","ecb":"app.onNotificationGCM"});
+			//pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"485591517998","ecb":"app.onNotificationGCM"});
+			pushNotification.register( 
+				function(){alert('Push: win');}, 
+				function(){alert('Push: Error');},  
+				{ senderID: "485591517998", ecb: "app.onNotificationGCM" }
+			);
 		}
 		catch (ex) {
 			alert('error: ' + ex);
@@ -76,6 +82,9 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
+                    console.log("Regid " + e.regid);
+                    alert('registration id = '+e.regid);
+					
 					var method = "POST";
 					var postData = "/?regId=" +e.regid;
 					var url = "http://kimming.byethost4.com";
@@ -88,6 +97,7 @@ var app = {
 					request.open(method, url, async);
 					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 					request.send(postData);
+					alert(request.status);
                 }
             break;
  
