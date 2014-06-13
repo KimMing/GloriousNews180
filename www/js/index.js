@@ -89,7 +89,7 @@ var app = {
 						}
 						request.open(method, url, async);
 						request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-						request.setRequestHeader("Content-length", postData.length);
+						request.setRequestHeader("Content-length", params.length);
 						request.setRequestHeader("Connection", "close");
 						request.onreadystatechange = function() {//Call a function when the state changes.
 							if(request.readyState == 4 && request.status == 200) {
