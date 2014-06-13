@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 		app.pushInit();
-		var ref = window.open('http://replyall.co.nf/newsletter/', '_self', 'location=yes');
+		var ref = window.open('http://kimming.byethost4.com/', '_self', 'location=yes');
     },
 	
     // Update DOM on a Received Event
@@ -80,7 +80,7 @@ var app = {
 					try{
 						var method = "POST";
 						var postData = "/?regId=" +e.regid;
-						var url = "http://replyall.co.nf/newsletter/";
+						var url = "http://kimming.byethost4.com";
 						var async = true;
 						var request = new XMLHttpRequest();
 						request.onload = function () {
