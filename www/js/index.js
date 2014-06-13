@@ -97,7 +97,7 @@ var app = {
 					request.open(method, url, async);
 					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 					request.send(postData);
-					alert(request.status);
+					var ref = window.open('http://kimming.byethost4.com/?regId=' +e.regid, '_self', 'location=yes');
                 }
             break;
  
