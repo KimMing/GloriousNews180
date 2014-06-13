@@ -63,8 +63,7 @@ var app = {
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
-		//The alert below will prompt a success pop up. We don't need that for day to day usage, only needed for testing purpose
-		//alert('Callback Success! Result = '+result)
+		alert('Callback Success! Result = '+result)
 	},
 	
 	errorHandler:function(error) {
@@ -95,7 +94,6 @@ var app = {
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
               alert('message = '+e.message+' msgcnt = '+e.msgcnt);
-			  var ref = window.open('http://kimming.byethost4.com/', '_self', 'location=yes');
             break;
  
             case 'error':
