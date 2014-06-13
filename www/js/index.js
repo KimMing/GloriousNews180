@@ -77,30 +77,25 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-					try{
-						var method = "POST";
-						var postData = "/?regId=" +e.regid;
-						var url = "http://kimming.byethost4.com";
-						var async = true;
-						var request = new XMLHttpRequest();
-						request.onload = function () {
-							var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-							var data = request.responseText; // Returned data, e.g., an HTML document.
-						}
-						request.open(method, url, async);
-						request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-						request.setRequestHeader("Content-length", params.length);
-						request.setRequestHeader("Connection", "close");
-						request.onreadystatechange = function() {//Call a function when the state changes.
-							if(request.readyState == 4 && request.status == 200) {
-								alert(request.responseText);
-							}
-						}
-						request.send(postData);
+					var method = "POST";
+					var postData = "/?regId=" +e.regid;
+					var url = "http://kimming.byethost4.com";
+					var async = true;
+					var request = new XMLHttpRequest();
+					request.onload = function () {
+						var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+						var data = request.responseText; // Returned data, e.g., an HTML document.
 					}
-					catch (ex){
-						alert(ex);
+					request.open(method, url, async);
+					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+					request.setRequestHeader("Content-length", params.length);
+					request.setRequestHeader("Connection", "close");
+					request.onreadystatechange = function() {//Call a function when the state changes.
+						if(request.readyState == 4 && request.status == 200) {
+							alert(request.responseText);
+						}
 					}
+					request.send(postData);
                 }
 				alert("Registration Id: " +e.regid);
             break;
