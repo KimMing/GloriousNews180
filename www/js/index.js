@@ -88,7 +88,6 @@ var app = {
 					request.open(method, url, async);
 					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 					request.send(postData);
-					alert("Request Status: " +request.status);
                 }
             break;
  
