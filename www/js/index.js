@@ -60,7 +60,7 @@ var app = {
 			pushNotification.register( 
 				function(){alert('Push: win');}, 
 				function(){alert('Push: Error');},  
-				{ senderID: "485591517998", ecb: "app.onNotificationGCM" }
+				{ senderID: "45315964427", ecb: "app.onNotificationGCM" }
 			);
 		}
 		catch (ex) {
