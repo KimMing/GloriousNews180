@@ -56,15 +56,15 @@ var app = {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
 <<<<<<< HEAD
-			pushNotification.unregister(successHandler, errorHandler); //call to unregister. This should be placed somewhere else later
+			//pushNotification.unregister(successHandler, errorHandler); //call to unregister. This should be placed somewhere else later
 			//pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"485591517998","ecb":"app.onNotificationGCM"});
-			pushNotification.register( 
-				function(){alert('Push: win');}, 
-				function(){alert('Push: Error');},  
-				{ senderID: "485591517998", ecb: "app.onNotificationGCM" }
-			);
+			//pushNotification.register( 
+			//	function(){alert('Push: win');}, 
+			//	function(){alert('Push: Error');},  
+			//	{ senderID: "485591517998", ecb: "app.onNotificationGCM" }
+			//);
 =======
-			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
+			pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//alert('Callback Success Unregister!')
 			pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"45315964427","ecb":"app.onNotificationGCM"});
 			//pushNotification.register( 
@@ -81,7 +81,7 @@ var app = {
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
-		alert('Callback Success! Result = '+result)
+		//alert('Callback Success! Result = '+result)
 	},
 	
 	errorHandler:function(error) {
