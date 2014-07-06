@@ -55,13 +55,15 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
-=======
+//=======
 			if (device.platform == 'android' || device.platform == 'Android') {
+				alert ('Android register function.');
             			pushNotification.register(successHandler, errorHandler,{"senderID":"45315964427","ecb":"onNotificationGCM"});
         		}
         		else {
+        			alert('IOS register function');
             			pushNotification.register(this.tokenHandler,this.errorHandler,   {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         		}
 			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
@@ -72,7 +74,7 @@ var app = {
 			//	function(){alert('Push: Error');},  
 			//	{ senderID: "45315964427", ecb: "app.onNotificationGCM" }
 			//);
->>>>>>> origin/master
+//>>>>>>> origin/master
 		}
 		catch (ex) {
 			alert('error: ' + ex);
@@ -81,9 +83,13 @@ var app = {
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
+		alert('Callback Success! Result = '+result);
+	},
+		
+	// result contains any message sent from the plugin call
+	tokenHandler: function(result) {
 		//alert('Callback Success! Result = '+result)
 	},
-	
 	errorHandler:function(error) {
 		alert(error);
 	},
@@ -113,7 +119,7 @@ var app = {
                 }
                 else
                 {
-                	alert('No registration id found.')
+                	alert('No registration id found.');
                 }
             break;
  
