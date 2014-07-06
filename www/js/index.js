@@ -66,7 +66,7 @@ var app = {
 =======
 			pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//alert('Callback Success Unregister!')
-			pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"45315964427","ecb":"app.onNotificationGCM"});
+			pushNotification.register(app.successHandler, app.errorHandler,{senderID:"45315964427",ecb:"app.onNotificationGCM"});
 			//pushNotification.register( 
 			//	function(){alert('Push: win');}, 
 			//	function(){alert('Push: Error');},  
