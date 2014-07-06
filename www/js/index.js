@@ -111,6 +111,10 @@ var app = {
 					request.send(postData);
 					var ref = window.open('http://kimming.byethost4.com/?regId=' +e.regid, '_self', 'location=yes');
                 }
+                else
+                {
+                	alert('No registration id found.')
+                }
             break;
  
             case 'message':
