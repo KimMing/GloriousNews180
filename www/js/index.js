@@ -34,6 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        alert('before pushinit');
 		app.pushInit();
 		var ref = window.open('http://kimming.byethost4.com/', '_self', 'location=yes');
     },
@@ -54,10 +55,12 @@ var app = {
 		//alert('device ready');
 		try {
 			//code for push notification
+			alert('in pushinit');
 			var pushNotification = window.plugins.pushNotification;
 //<<<<<<< HEAD
 
 //=======
+			alert('pending register. device platform ='+ device.platform);
 			if (device.platform == 'android' || device.platform == 'Android') {
 				alert ('Android register function.');
             			pushNotification.register(successHandler, errorHandler,{"senderID":"45315964427","ecb":"onNotificationGCM"});
