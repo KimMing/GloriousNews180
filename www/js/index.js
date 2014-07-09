@@ -71,7 +71,7 @@ var app = {
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
 		//alert('Callback Success! Result = '+result);
-	//},
+	},
 		
 	// result contains any message sent from the plugin call
 	tokenHandler: function(result) {
