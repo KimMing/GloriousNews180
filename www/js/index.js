@@ -21,7 +21,7 @@ var app = {
     initialize: function() {
     	alert('starting application...');
         this.bindEvents();
-    }
+    },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
@@ -29,7 +29,7 @@ var app = {
     bindEvents: function() {
     	alert('bindEvents');
         document.addEventListener('deviceready', this.onDeviceReady, false);
-    }
+    },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
@@ -39,19 +39,7 @@ var app = {
         alert('before pushinit');
 		app.pushInit();
 		var ref = window.open('http://kimming.byethost4.com/', '_self', 'location=yes');
-    }
-	
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
+    },
 	
 	pushInit: function(){
 		//alert('device ready');
@@ -84,21 +72,21 @@ var app = {
 		catch (ex) {
 			alert('error: ' + ex);
 		}
-	}
+	},
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
 		alert('Callback Success! Result = '+result);
-	}
+	},
 		
 	// result contains any message sent from the plugin call
 	tokenHandler: function(result) {
 		alert('Tokenhandler Callback Success! Result = '+result);
-	}
+	},
 	
 	errorHandler:function(error) {
 		alert(error);
-	}
+	},
 	
 	onNotificationGCM: function(e) {
         switch( e.event )
@@ -142,7 +130,7 @@ var app = {
               alert('An unknown GCM event has occurred');
               break;
         }
-    }
+    },
     
        // iOS
     onNotificationAPN: function(event) {
@@ -159,5 +147,17 @@ var app = {
             var snd = new Media(event.sound);
             snd.play();
         }
+    },
+       
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
     }
-}
+};
