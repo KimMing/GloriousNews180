@@ -43,11 +43,11 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-
+			pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//alert('pending register. device platform ='+ device.platform);
 			//if (device.platform == 'android' || device.platform == 'Android') {
 				alert ('Android register function.');
-            			pushNotification.register(successHandler, errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
+            			pushNotification.register(app.successHandler, app.errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
         		//}
         		//else {
         		//	alert('IOS register function');
@@ -71,7 +71,7 @@ var app = {
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
 		//alert('Callback Success! Result = '+result);
-	},
+	//},
 		
 	// result contains any message sent from the plugin call
 	tokenHandler: function(result) {
@@ -79,7 +79,7 @@ var app = {
 	},
 	
 	errorHandler:function(error) {
-		//alert(error);
+		alert(error);
 	},
 	
 	onNotificationGCM: function(e) {
