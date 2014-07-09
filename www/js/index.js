@@ -19,6 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+    	alert('starting application...');
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -26,6 +27,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
+    	alert('bindEvents');
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -63,11 +65,11 @@ var app = {
 			alert('pending register. device platform ='+ device.platform);
 			if (device.platform == 'android' || device.platform == 'Android') {
 				alert ('Android register function.');
-            			pushNotification.register(successHandler, errorHandler,{"senderID":"45315964427","ecb":"onNotificationGCM"});
+            			pushNotification.register(successHandler, errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
         		}
         		else {
         			alert('IOS register function');
-            			pushNotification.register(this.tokenHandler,this.errorHandler,   {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+            			pushNotification.register(this.tokenHandler,this.errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         		}
 			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//alert('Callback Success Unregister!')
@@ -91,7 +93,7 @@ var app = {
 		
 	// result contains any message sent from the plugin call
 	tokenHandler: function(result) {
-		//alert('Callback Success! Result = '+result)
+		alert('Tokenhandler Callback Success! Result = '+result)
 	},
 	errorHandler:function(error) {
 		alert(error);
@@ -103,22 +105,22 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                    //console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
+                    	console.log("Regid " + e.regid);
+                    	alert('registration id = '+e.regid);
 					
-					var method = "POST";
-					var postData = "/?regId=" +e.regid;
-					var url = "http://kimming.byethost4.com";
-					var async = true;
-					var request = new XMLHttpRequest();
-					request.onload = function () {
-						var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-						var data = request.responseText; // Returned data, e.g., an HTML document.
-					}
-					request.open(method, url, async);
-					request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-					request.send(postData);
-					var ref = window.open('http://kimming.byethost4.com/?regId=' +e.regid, '_self', 'location=yes');
+			var method = "POST";
+			var postData = "/?regId=" +e.regid;
+			var url = "http://kimming.byethost4.com";
+			var async = true;
+			var request = new XMLHttpRequest();
+			request.onload = function () {
+			var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+				var data = request.responseText; // Returned data, e.g., an HTML document.
+			}
+			request.open(method, url, async);
+			request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+			request.send(postData);
+			var ref = window.open('http://kimming.byethost4.com/?regId=' +e.regid, '_self', 'location=yes');
                 }
                 else
                 {
