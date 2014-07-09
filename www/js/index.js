@@ -19,7 +19,6 @@
 var app = {
     // Application Constructor
     initialize: function() {
-    	alert('starting application...');
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -27,7 +26,6 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-    	alert('bindEvents');
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -36,8 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert('before pushinit');
-		app.pushInit();
+	app.pushInit();
 		var ref = window.open('http://kimming.byethost4.com/', '_self', 'location=yes');
     },
 	
@@ -45,20 +42,17 @@ var app = {
 		//alert('device ready');
 		try {
 			//code for push notification
-			alert('in pushinit');
 			var pushNotification = window.plugins.pushNotification;
-//<<<<<<< HEAD
 
-//=======
-			alert('pending register. device platform ='+ device.platform);
-			if (device.platform == 'android' || device.platform == 'Android') {
+			//alert('pending register. device platform ='+ device.platform);
+			//if (device.platform == 'android' || device.platform == 'Android') {
 				alert ('Android register function.');
             			pushNotification.register(successHandler, errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
-        		}
-        		else {
-        			alert('IOS register function');
-            			pushNotification.register(this.tokenHandler,this.errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
-        		}
+        		//}
+        		//else {
+        		//	alert('IOS register function');
+            		//	pushNotification.register(this.tokenHandler,this.errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+        		//}
 			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//alert('Callback Success Unregister!')
 			//pushNotification.register(app.successHandler, app.errorHandler,{senderID:"45315964427",ecb:"app.onNotificationGCM"});
@@ -76,16 +70,16 @@ var app = {
 	
 	// result contains any message sent from the plugin call
 	successHandler: function(result) {
-		alert('Callback Success! Result = '+result);
+		//alert('Callback Success! Result = '+result);
 	},
 		
 	// result contains any message sent from the plugin call
 	tokenHandler: function(result) {
-		alert('Tokenhandler Callback Success! Result = '+result);
+		//alert('Tokenhandler Callback Success! Result = '+result);
 	},
 	
 	errorHandler:function(error) {
-		alert(error);
+		//alert(error);
 	},
 	
 	onNotificationGCM: function(e) {
@@ -95,7 +89,7 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     	console.log("Regid " + e.regid);
-                    	alert('registration id = '+e.regid);
+                    	//alert('registration id = '+e.regid);
 					
 			var method = "POST";
 			var postData = "/?regId=" +e.regid;
