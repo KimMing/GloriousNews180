@@ -93,8 +93,9 @@ var app = {
 		
 	// result contains any message sent from the plugin call
 	tokenHandler: function(result) {
-		alert('Tokenhandler Callback Success! Result = '+result)
+		alert('Tokenhandler Callback Success! Result = '+result);
 	}
+	
 	errorHandler:function(error) {
 		alert(error);
 	}
