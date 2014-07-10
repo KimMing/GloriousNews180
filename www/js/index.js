@@ -43,8 +43,8 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-			pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
-			//alert('pending register. device platform ='+ device.platform);
+			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
+			alert('pending register. device platform ='+ device.platform);
 			//if (device.platform == 'android' || device.platform == 'Android') {
 				alert ('Android register function.');
             			pushNotification.register(app.successHandler, app.errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
