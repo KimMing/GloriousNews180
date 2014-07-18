@@ -43,7 +43,6 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-			var device1 = window.plugins.;
 			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			alert('pending register. device platform ='+ device1.platform);
 			//if (device.platform == 'android' || device.platform == 'Android') {
