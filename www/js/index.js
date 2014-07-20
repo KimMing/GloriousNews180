@@ -26,7 +26,6 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-    	alert("Hello World");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -47,7 +46,7 @@ var app = {
 			var pushNotification = window.plugins.pushNotification;
 			alert ('Android register function.');
 			//var phoneName = window.device;
-			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
+			pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
 			//alert('pending register. device platform ='+ phoneName.platform);
 			//if (device.platform == 'android' || device.platform == 'Android') {
 				
@@ -57,14 +56,7 @@ var app = {
         		//	alert('IOS register function');
             		//	pushNotification.register(this.tokenHandler,this.errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         		//}
-			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
-			//alert('Callback Success Unregister!')
-			//pushNotification.register(app.successHandler, app.errorHandler,{senderID:"45315964427",ecb:"app.onNotificationGCM"});
-			//pushNotification.register( 
-			//	function(){alert('Push: win');}, 
-			//	function(){alert('Push: Error');},  
-			//	{ senderID: "45315964427", ecb: "app.onNotificationGCM" }
-			//);
+
 //>>>>>>> origin/master
 		}
 		catch (ex) {
