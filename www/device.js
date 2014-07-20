@@ -1,9 +1,3 @@
-gitprojects / cordova-plugin-device.git / blob
-? search:  re
-summary | shortlog | log | commit | commitdiff | tree
-history | raw | HEAD
-CB-7168 Moving Device autotests to plugin (aka new-style tests)
-[cordova-plugin-device.git] / www / device.js
    1 /*
    2  *
    3  * Licensed to the Apache Software Foundation (ASF) under one
@@ -81,4 +75,3 @@ CB-7168 Moving Device autotests to plugin (aka new-style tests)
   75 };
   76 
   77 module.exports = new Device();
-Apache CordovaRSSAtom
