@@ -43,11 +43,11 @@ var app = {
 		try {
 			//code for push notification
 			var pushNotification = window.plugins.pushNotification;
-			var phoneName = window.device.name;
+			//var phoneName = window.device.name;
 			//pushNotification.unregister(app.successHandler, app.errorHandler); //call to unregister. This should be placed somewhere else later
-			alert('pending register. device platform ='+ phoneName);
+			//alert('pending register. device platform ='+ phoneName);
 			//if (device.platform == 'android' || device.platform == 'Android') {
-				alert ('Android register function.');
+				//alert ('Android register function.');
             			pushNotification.register(app.successHandler, app.errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
         		//}
         		//else {
