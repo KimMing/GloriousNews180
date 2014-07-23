@@ -50,7 +50,7 @@ var app = {
 			//alert('pending register. device platform ='+ phoneName.platform);
 			//if (device.platform == 'android' || device.platform == 'Android') {
 				
-            			pushNotification.register(app.successHandler, app.errorHandler, {"senderID":"45315964427","ecb":"onNotificationGCM"});
+            			pushNotification.register(app.successHandler, app.errorHandler, {"senderID":"45315964427","ecb":"app.onNotificationGCM"});
         		//}
         		//else {
         		//	alert('IOS register function');
