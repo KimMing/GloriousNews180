@@ -123,6 +123,7 @@ var app = {
     },
     
        // iOS
+    /*
     onNotificationAPN: function(event) {
         var pushNotification = window.plugins.pushNotification;
 
@@ -138,6 +139,7 @@ var app = {
             snd.play();
         }
     },
+    */
        
     // Update DOM on a Received Event
     receivedEvent: function(id) {
